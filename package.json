@@ -1,13 +1,14 @@
 {
   "name": "cyber-range-simulator",
-  "version": "1.0.0",
-  "description": "A self-contained Cyber Security SOC Simulator",
+  "version": "1.1.0",
+  "description": "Real-time SOC Simulator using Socket.io",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4"
   },
   "engines": {
     "node": ">=14.0.0"

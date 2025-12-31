@@ -1,14 +1,13 @@
 {
-  "name": "gun-relay-server",
+  "name": "cyber-range-simulator",
   "version": "1.0.0",
-  "description": "Relay for Cybersecurity Simulator",
+  "description": "A self-contained Cyber Security SOC Simulator",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "gun": "^0.2020.1239"
+    "express": "^4.18.2"
   },
   "engines": {
     "node": ">=14.0.0"

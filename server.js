@@ -1,23 +1,19 @@
-const http = require('http');
-const Gun = require('gun');
 const express = require('express');
-
+const path = require('path');
 const app = express();
-const port = process.env.PORT || 8080;
 
-app.use(Gun.serve);
+// Use the PORT environment variable provided by Render, or default to 3000
+const port = process.env.PORT || 3000;
+
+// Serve static files from the current directory
+app.use(express.static(__dirname));
+
+// Send index.html for the root route
 app.get('/', (req, res) => {
-    res.status(200).send('Cyber Security Relay Online');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-const server = http.createServer(app);
-
-const gun = Gun({ 
-    web: server,
-    radisk: false, // Ephemeral storage for relay performance
-    localStorage: false
-});
-
-server.listen(port, () => {
-    console.log(`Relay server running on port ${port}`);
+// Start the server
+app.listen(port, () => {
+  console.log(`CyberRange Server running on port ${port}`);
 });
